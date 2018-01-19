@@ -25,7 +25,7 @@ import java.util.HashMap;
 @Path("user-friends")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class UserResource {
+public class UserFriendsResource {
 
     @GET
     public Response getAllUsers() {

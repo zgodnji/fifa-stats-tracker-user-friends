@@ -14,11 +14,17 @@ spec:
     spec:
       containers:
       - name: user-friends
-        image: jojo27/fifa-stats-tracker-user-friends:latest
+        image: ancina/user-friends:latest
         ports:
         - containerPort: 8086
           name: server
           protocol: TCP
+
+      livenessProbe:
+        tcpSocket:
+          port: 8086
+        initialDelaySeconds: 15
+        periodSeconds: 20
 
 ---
 
@@ -27,7 +33,7 @@ kind: Service
 metadata:
   name: user-friends
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 8086
       protocol: TCP
