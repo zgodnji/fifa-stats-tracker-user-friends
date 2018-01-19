@@ -42,11 +42,6 @@ public class UserResource {
                 : Response.status(Response.Status.NOT_FOUND).build();
     }
 
-    @Inject
-    @DiscoverService(value = "user-friends-service", environment = "dev", version = "1.0.0")
-    private String urlString;
-
-
     /*
     @POST
     public Response addUser(String id, String friends) {
